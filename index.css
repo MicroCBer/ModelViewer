@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap");
+* {
+  font-family: "Noto Sans SC", sans-serif !important;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  width: 1350px;
+  max-width: 1350px;
+  padding: 3rem;
+}
+.body .title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.body .subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--bc10);
+}
+.body .selectors {
+  padding: 10px;
+  margin: 3px;
+  background: rgba(87, 87, 87, 0.075);
+  border-radius: 8px;
+}
+.body .selectors input[type=radio][id^=gqui-]:not(:checked) + label, .body .selectors input[type=checkbox][id^=gqui-]:not(:checked) + label {
+  background: #e7e7e7 !important;
+}
+.body .model {
+  float: left;
+  position: relative;
+  margin: 0.4rem;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  transition: box-shadow 0.3s;
+  background: linear-gradient(#161616, #252525);
+  height: 200px;
+}
+.body .model .image {
+  justify-content: center;
+  z-index: -1;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.body .model .image img {
+  width: 400px;
+  background-size: contain;
+}
+.body .model .image .img-no-image, .body .model .image .gi-failed {
+  display: none;
+}
+.body .model .image .img-no-image.shown, .body .model .image .gi-failed.shown {
+  display: inline;
+  opacity: 1;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 30px;
+  font-weight: 800;
+  color: rgba(143, 143, 143, 0.452);
+}
+.body .model .id {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: rgba(255, 255, 255, 0.24);
+  left: 5px;
+  font-size: 12px;
+  font-weight: 300;
+  top: 5px;
+}
+.body .model .detail {
+  transition: opacity 0.3s;
+  opacity: 0;
+  color: white;
+  padding: 10px;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 130px;
+  background: linear-gradient(#ffffff00, #000000);
+  z-index: 1;
+}
+.body .model .detail .information {
+  float: left;
+  max-width: 260px;
+}
+.body .model .detail .information * {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.body .model .detail .operations {
+  margin-top: 6px;
+  margin-right: 10px;
+  float: right;
+  font-size: 10px;
+}
+.body .model .detail .operations .btn {
+  margin-left: 5px;
+}
+.body .model .detail .operations i {
+  color: white !important;
+}
+.body .model .detail.no-image {
+  opacity: 1;
+}
+.body .model:hover {
+  box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.322);
+}
+.body .model:hover .detail {
+  opacity: 1;
+}/*# sourceMappingURL=index.css.map */
