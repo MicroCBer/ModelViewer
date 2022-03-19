@@ -5,8 +5,8 @@
         "microblock.ink":"Github Pages",
     }[document.location.host]||"Unknown";
     if(document.location.host.includes("zeyu"))platform="WGzeyu"
-    $(".meta").text(`Build 0.13 by MicroBlock. Running on ${platform}.`)
-    if(platform=="WGzeyu")$(".contact").text("If you don't want your models to appear on this website, please contact WGzeyu at Discord WGzeyu#7287.")
+    $(".meta").text(`版本：0.13，前端：MicroBlock　后端：WGzeyu　服务器：${platform}　数据源：QosmeticsDiscord.`)
+    if(platform=="WGzeyu")$(".contact").text("If you don't want your models to appear on this website, please contact WGzeyu at Discord WGzeyu#7287 or 785777793.qq.com")
 
     function xss(str) {
         return str.replaceAll("<", "&lt;").replaceAll(">", "&gt;")
