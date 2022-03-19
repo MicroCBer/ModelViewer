@@ -1,4 +1,11 @@
 !(async () => {
+    let platform={
+        "localhost:5500":"localhost",
+        "127.0.0.1:5500":"localhost",
+        "microblock.ink":"Github Pages",
+    }[document.location.host]||"Unknown";
+    if(document.location.host.includes("zeyu"))platform="WGzeyu"
+    $(".meta").text(`Build 0.12 by MicroBlock. Running on ${platform}.`)
 
     function xss(str) {
         return str.replaceAll("<", "&lt;").replaceAll(">", "&gt;")
@@ -15,7 +22,7 @@
         return unescape(str.replace(/\\u/g, '%u'));
     }
 
-    let sabersData = (await (await fetch("qsabers-all.json")).json())["模型"],
+    let sabersData = (await (await fetch("file/qsabers-web.json")).json())["model"],
         sabers=[],filters={},filteredHandle=()=>{};
     let handle=null;
 
@@ -59,29 +66,27 @@
                 </div>
             </div>
         </div>`)
-                if (model["ID"] == "930607065943126026")
-                    console.log(model, model["图片链接"])
-                if (!model["图片链接"]) {
+                if (!model["imgurl"]) {
                     // dom.find(".detail").addClass("no-image");
                     dom.find(".img").remove();
                     dom.find(".img-no-image").addClass("shown");
                 } else {
-                    dom.find(".img").attr("src", model["图片链接"])
+                    dom.find(".img").attr("src", model["imgurl"])
                     // dom.find(".img").gazeimg()
                 }
 
-                dom.find(".name").text(decodeUnicode(model["名称"]))
-                dom.find(".author").text(decodeUnicode(model["作者"]))
-                dom.find(".id").text(model["ID"])
+                dom.find(".name").text(decodeUnicode(model["name"]))
+                dom.find(".author").text(decodeUnicode(model["author"]))
+                dom.find(".id").text(model["uploadtime"])
                 $("#sabers").append(dom[0])
                 $($("#sabers")[0].lastChild).find(".more-information-btn").click(() => {
                     $.ui.dialog({
-                        title: model["名称"],
-                        message: md(model["介绍"]),
+                        title: model["name"],
+                        message: md(model["description"]),
                     })
                 })
                 $($("#sabers")[0].lastChild).find(".download-btn").click(() => {
-                    document.location.assign(model["模型链接"])
+                    document.location.assign(model["modelurl"])
                 })
             }
         }
@@ -101,20 +106,20 @@
     initModels()
 
     $("#gqui-imageonly").on("change",function(){
-        if(this.checked)filters["imageonly"]=(model)=>model["图片链接"]?true:false;
+        if(this.checked)filters["imageonly"]=(model)=>model["imgurl"]?true:false;
         else delete filters["imageonly"]
         initModels()
     })
 
     $("#gqui-timesort").on("change",function(){
         filteredHandle=()=>{sabers.sort((a,b)=>{
-            return a["发布时间"]-b["发布时间"]
+            return a["uploadtime"]-b["uploadtime"]
         })}
         initModels()
     })
     $("#gqui-timesort-reversed").on("change",function(){
         filteredHandle=()=>{sabers.sort((a,b)=>{
-            return b["发布时间"]-a["发布时间"]
+            return b["uploadtime"]-a["uploadtime"]
         })}
         initModels()
     })
@@ -129,7 +134,7 @@
         if(this.checked){
             search.disabled=true;
             filters["search"]=(model)=>{
-                return model["介绍"].includes(search.value)
+                return model["description"].includes(search.value)
             };
         }
         else{
@@ -137,5 +142,19 @@
             search.disabled=false
         } 
         initModels()
+    })
+
+    $(".btnSubtitle").click(async function(){
+        if($(this).hasClass("activated"))return;
+        $(".btnSubtitle").removeClass("activated");
+        $(this).addClass("activated");
+        sabersData = (await (await fetch(this.dataset.file)).json())["model"]
+        $("#sabers").fadeOut(200)
+        setTimeout(()=>{
+            initModels()
+            $("#sabers").fadeIn(200)
+        },200)
+        
+        
     })
 })()
