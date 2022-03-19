@@ -6,7 +6,7 @@
     }[document.location.host]||"Unknown";
     if(document.location.host.includes("zeyu"))platform="WGzeyu"
     $(".meta").text(`Build 0.13 by MicroBlock. Running on ${platform}.`)
-    if(platform=="WGzeyu")$(".contact").text("If you don't want your models to appear on this website, please contact WGzeyu at Discord WGzeyu#7287.")
+    if(platform=="WGzeyu")$(".contact").text("If you don't want your models to appear on this website, please contact WGzeyu at Discord WGzeyu#7287 or 785777793.qq.com")
 
     function xss(str) {
         return str.replaceAll("<", "&lt;").replaceAll(">", "&gt;")
