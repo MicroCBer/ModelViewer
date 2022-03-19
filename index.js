@@ -74,7 +74,7 @@
                 } else {
                     if(platform=="Github Pages")dom.find(".img").attr("data-gisrc", "https://raw.githubusercontent.com/MicroCBer/ModelViewer/main/"+model["imgurl"])
                     else 
-                    dom.find(".img").attr("data-gisrc", model["imgurl"])
+                    dom.find(".img").attr("src", model["imgurl"])
                      
                 }
 
@@ -92,6 +92,7 @@
                     document.location.assign(model["modelurl"])
                 })
             }
+            if(platform=="Github Pages")
             $("img[data-gisrc]").gazeimg({bg:['#000']})
         }
 
