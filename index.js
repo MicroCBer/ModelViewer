@@ -95,7 +95,7 @@
         let loadLock = false;
         if(handle)removeEventListener("scroll",handle);
         handle=addEventListener("scroll", () => {
-            if (window.scrollY > document.body.scrollHeight - 1000 && !loadLock) {
+            if (window.scrollY > document.body.scrollHeight - 1500 && !loadLock) {
                 loadLock = true
                 maxIndex = Math.min(sabers.length, maxIndex + 10);
                 loadModels()
