@@ -87,7 +87,6 @@ body {
   align-items: center;
 }
 .body .model .image img {
-  pointer-events: none;
   width: 400px;
   -o-object-fit: contain;
      object-fit: contain;
