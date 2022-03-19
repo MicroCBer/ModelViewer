@@ -5,7 +5,7 @@
         "microblock.ink":"Github Pages",
     }[document.location.host]||"Unknown";
     if(document.location.host.includes("zeyu"))platform="WGzeyu"
-    $(".meta").text(`Build 0.12 by MicroBlock. Running on ${platform}.`)
+    $(".meta").text(`Build 0.13 by MicroBlock. Running on ${platform}.`)
 
     function xss(str) {
         return str.replaceAll("<", "&lt;").replaceAll(">", "&gt;")
