@@ -92,7 +92,7 @@
                     document.location.assign(model["modelurl"])
                 })
             }
-            $("img[data-gisrc]").gazeimg()
+            $("img[data-gisrc]").gazeimg({bg:['#000']})
         }
 
         let loadLock = false;
