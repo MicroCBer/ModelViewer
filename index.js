@@ -108,6 +108,9 @@
         })
         loadModels()
     }
+    filteredHandle=()=>{sabers.sort((a,b)=>{
+       return b["uploadtime"]-a["uploadtime"]
+    })}
     initModels()
 
     $("#gqui-imageonly").on("change",function(){
