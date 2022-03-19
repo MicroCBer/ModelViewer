@@ -71,8 +71,8 @@
                     dom.find(".img").remove();
                     dom.find(".img-no-image").addClass("shown");
                 } else {
-                    if(platform=="Github Pages")model["imgurl"]="https://raw.githubusercontent.com/MicroCBer/ModelViewer/main/"+model["imgurl"]
-                    dom.find(".img").attr("src", model["imgurl"])
+                    if(platform=="Github Pages")dom.find(".img").attr("src", "https://raw.githubusercontent.com/MicroCBer/ModelViewer/main/"+model["imgurl"])
+                    else dom.find(".img").attr("src", model["imgurl"])
                     // dom.find(".img").gazeimg()
                 }
 
