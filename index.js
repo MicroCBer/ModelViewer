@@ -72,9 +72,10 @@
                     dom.find(".img").remove();
                     dom.find(".img-no-image").addClass("shown");
                 } else {
-                    if(platform=="Github Pages")dom.find(".img").attr("src", "https://raw.githubusercontent.com/MicroCBer/ModelViewer/main/"+model["imgurl"])
-                    else dom.find(".img").attr("src", model["imgurl"])
-                    // dom.find(".img").gazeimg()
+                    if(platform=="Github Pages")dom.find(".img").attr("data-gisrc", "https://raw.githubusercontent.com/MicroCBer/ModelViewer/main/"+model["imgurl"])
+                    else 
+                    dom.find(".img").attr("data-gisrc", model["imgurl"])
+                     
                 }
 
                 dom.find(".name").text(decodeUnicode(model["name"]))
@@ -91,6 +92,7 @@
                     document.location.assign(model["modelurl"])
                 })
             }
+            $("img[data-gisrc]").gazeimg({bg:['#000']})
         }
 
         let loadLock = false;

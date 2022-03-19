@@ -80,7 +80,7 @@ body{
             user-select: none;
             align-items: center;
             img{
-                pointer-events: none;
+                // pointer-events: none;
                 width: $model-width;
                 object-fit: contain;
                 height: $model-height;
