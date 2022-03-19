@@ -39,11 +39,12 @@ body {
       -ms-user-select: none;
           user-select: none;
   font-size: 1.4rem;
-  margin-bottom: 1rem;
   font-weight: 500;
   color: var(--bc10);
+  margin: 1rem 0;
 }
 .body .subtitle .btnSubtitle {
+  transition: color 0.2s;
   cursor: pointer;
 }
 .body .subtitle .btnSubtitle.activated {

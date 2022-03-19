@@ -36,11 +36,12 @@ body{
     .subtitle{
         user-select: none;
         font-size: 1.4rem;
-        margin-bottom: 1rem;
         font-weight: 500;
         color:var(--bc10);
+        margin: 1rem 0;
 
         .btnSubtitle{
+            transition: color 0.2s;
             &.activated{
                 color:rgb(0, 132, 255);
                 font-weight: 700;
