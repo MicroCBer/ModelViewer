@@ -24,11 +24,14 @@ body{
         margin-bottom: 1rem;
         user-select: none;
     }
-    .meta{
+    .meta,.warning{
         color:rgba(80, 80, 80, 0.623);
         user-select: none;
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
         font-size: 0.7rem;
+    }
+    .warning{
+        color:rgba(0, 0, 0, 0.829);
     }
     .subtitle{
         user-select: none;

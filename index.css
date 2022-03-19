@@ -22,14 +22,16 @@ body {
       -ms-user-select: none;
           user-select: none;
 }
-.body .meta {
+.body .meta, .body .warning {
   color: rgba(80, 80, 80, 0.623);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin-bottom: 1rem;
   font-size: 0.7rem;
+}
+.body .warning {
+  color: rgba(0, 0, 0, 0.829);
 }
 .body .subtitle {
   -webkit-user-select: none;
