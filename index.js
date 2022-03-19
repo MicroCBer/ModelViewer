@@ -59,15 +59,15 @@
                 </div>
             </div>
         </div>`)
-                if (model["图片链接"] == undefined)
+                if (model["ID"] == "930607065943126026")
                     console.log(model, model["图片链接"])
                 if (!model["图片链接"]) {
                     // dom.find(".detail").addClass("no-image");
                     dom.find(".img").remove();
                     dom.find(".img-no-image").addClass("shown");
                 } else {
-                    dom.find(".img").attr("data-gisrc", model["图片链接"])
-                    dom.find(".img").gazeimg()
+                    dom.find(".img").attr("src", model["图片链接"])
+                    // dom.find(".img").gazeimg()
                 }
 
                 dom.find(".name").text(decodeUnicode(model["名称"]))
@@ -123,5 +123,19 @@
             return Math.random()-0.5
         })}
         initModels()
-    }) 
+    })
+    $("#gqui-search").on("change",function(){
+
+        if(this.checked){
+            search.disabled=true;
+            filters["search"]=(model)=>{
+                return model["介绍"].includes(search.value)
+            };
+        }
+        else{
+            delete filters["search"]
+            search.disabled=false
+        } 
+        initModels()
+    })
 })()
