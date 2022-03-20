@@ -159,6 +159,9 @@
         sabersData = (await (await fetch(this.dataset.file)).json())["model"]
         $("#sabers").fadeOut(200)
         setTimeout(()=>{
+            filteredHandle=()=>{sabers.sort((a,b)=>{
+               return b["uploadtime"]-a["uploadtime"]
+            })} 
             initModels()
             $("#sabers").fadeIn(200)
         },200)
