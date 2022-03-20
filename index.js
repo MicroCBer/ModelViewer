@@ -24,7 +24,7 @@
     }
 
     let sabersData = (await (await fetch("data/qsabers-web.json")).json())["model"],
-        sabers=[],filters={},filteredHandle=()=>{};
+        sabers=[],filters={},filteredHandle=()=>{sabers.sort((a,b)=>{ return b["uploadtime"]-a["uploadtime"]})};
     let handle=null;
 
     function filterModels(){
@@ -108,9 +108,6 @@
         })
         loadModels()
     }
-    filteredHandle=()=>{sabers.sort((a,b)=>{
-       return b["uploadtime"]-a["uploadtime"]
-    })}
     initModels()
 
     $("#gqui-imageonly").on("change",function(){
@@ -159,9 +156,6 @@
         sabersData = (await (await fetch(this.dataset.file)).json())["model"]
         $("#sabers").fadeOut(200)
         setTimeout(()=>{
-            filteredHandle=()=>{sabers.sort((a,b)=>{
-               return b["uploadtime"]-a["uploadtime"]
-            })} 
             initModels()
             $("#sabers").fadeIn(200)
         },200)
