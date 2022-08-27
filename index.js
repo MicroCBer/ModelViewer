@@ -44,8 +44,9 @@
         function loadModels() {
             while (maxIndex > nowIndex) {
                 let model = sabers.shift();
-                if (!model) continue;
+
                 nowIndex++;
+                if (!model) continue;
                 let dom = $(`<div class="model">
             <div class="image">
                 <img class="img" data-gisrc=''
