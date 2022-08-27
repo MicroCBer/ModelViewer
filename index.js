@@ -23,7 +23,7 @@
         return unescape(str.replace(/\\u/g, '%u'));
     }
 
-    let sabersData = (await (await fetch("data/qsabers-web.json")).json())["model"],
+    let sabersData = (await (await fetch("data/qsabers-web.json" + "?" + new Date().getTime())).json())["model"],
         sabers = [], filters = {}, filteredHandle = () => { sabers.sort((a, b) => { return b["uploadtime"] - a["uploadtime"] }) };
     let handle = null;
 
