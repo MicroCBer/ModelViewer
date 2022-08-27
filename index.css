@@ -21,27 +21,19 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
-.body .meta, .body .warning {
+.body .meta,
+.body .warning {
   color: rgba(80, 80, 80, 0.623);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   font-size: 0.7rem;
 }
 .body .warning {
   color: rgba(0, 0, 0, 0.829);
 }
 .body .subtitle {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   font-size: 1.4rem;
   font-weight: 500;
   color: var(--bc10);
@@ -49,6 +41,7 @@ body {
 }
 .body .subtitle .btnSubtitle {
   transition: color 0.2s;
+  font-size: 2rem;
   cursor: pointer;
 }
 .body .subtitle .btnSubtitle.activated {
@@ -62,7 +55,8 @@ body {
   background: rgba(87, 87, 87, 0.075);
   border-radius: 8px;
 }
-.body .selectors input[type=radio][id^=gqui-]:not(:checked) + label, .body .selectors input[type=checkbox][id^=gqui-]:not(:checked) + label {
+.body .selectors input[type=radio][id^=gqui-]:not(:checked) + label,
+.body .selectors input[type=checkbox][id^=gqui-]:not(:checked) + label {
   background: #e7e7e7 !important;
 }
 .body .model {
@@ -84,39 +78,31 @@ body {
   height: 300px;
   overflow: hidden;
   display: flex;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   align-items: center;
 }
 .body .model .image img {
   width: 400px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   height: 300px;
   background-size: contain;
 }
-.body .model .image .img-no-image, .body .model .image .gi-failed {
+.body .model .image .img-no-image,
+.body .model .image .gi-failed {
   display: none;
 }
-.body .model .image .img-no-image.shown, .body .model .image .gi-failed.shown {
+.body .model .image .img-no-image.shown,
+.body .model .image .gi-failed.shown {
   display: inline;
   opacity: 1;
   color: white;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   font-size: 30px;
   font-weight: 800;
   color: rgba(143, 143, 143, 0.452);
 }
 .body .model .id {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   color: rgba(255, 255, 255, 0.24);
   left: 5px;
   font-size: 12px;
@@ -167,4 +153,4 @@ body {
 }
 .body .model:hover .detail {
   opacity: 1;
-}/*# sourceMappingURL=index.css.map */
+}
