@@ -44,6 +44,7 @@
         function loadModels() {
             while (maxIndex > nowIndex) {
                 let model = sabers.shift();
+                if (!model) continue;
                 nowIndex++;
                 let dom = $(`<div class="model">
             <div class="image">

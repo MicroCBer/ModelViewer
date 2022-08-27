@@ -15,6 +15,7 @@
             function loadModels() {
               var _loop = function _loop() {
                 var model = sabers.shift();
+                if (!model) return "continue";
                 nowIndex++;
                 var dom = $("<div class=\"model\">\n            <div class=\"image\">\n                <img class=\"img\" data-gisrc=''\n                    data-gishow />\n                    <div class=\"img-no-image\">\u65E0\u56FE\u7247</div>\n            </div>\n            <div class=\"id\"></div>\n            <div class=\"detail\">\n                <div class=\"information\">\n                    <div class=\"name\"></div>\n                    <div class=\"author\"></div>\n                </div>\n                <div class=\"operations\">\n                    <button class=\"btn btn-icon more-information-btn\">\n                        <i class=\"icon ti ti-info-circle\"></i>\n                    </button>\n                    <button class=\"btn btn-icon download-btn\">\n                        <i class=\"icon ti ti-download\"></i>\n                    </button>\n                </div>\n            </div>\n        </div>");
 
@@ -42,7 +43,9 @@
               };
 
               while (maxIndex > nowIndex) {
-                _loop();
+                var _ret = _loop();
+
+                if (_ret === "continue") continue;
               }
 
               if (platform == "Github Pages") $("img[data-gisrc]").gazeimg({
